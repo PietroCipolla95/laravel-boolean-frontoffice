@@ -38,6 +38,12 @@ export default {
                             <li><a href="#">Lorem</a></li>
                         </ul>
                     </div>
+                    <div class="col">
+                        <img width="170" height="220"
+                            src="https://www.svgheart.com/wp-content/uploads/2021/11/margarita-glass-with-lime-slice-cocktail-liquor-free-svg-file-SvgHeart.Com.png"
+                            alt="margarita-glass-with-lime-slice-cocktail-liquor-free-svg-file-SvgHeart.Com"
+                            title="margarita-glass-with-lime-slice-cocktail-liquor-free-svg-file-SvgHeart.Com">
+                    </div>
                 </div>
             </div>
         </footer>
