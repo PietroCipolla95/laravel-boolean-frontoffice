@@ -4,15 +4,19 @@ export default {
 }
 </script>
 <template>
-    <div class="container">
+    <div id="home" class="container">
 
-        <h1 class="display-4 py-5">
-            Welcome to our cocktails bar!🍸
-        </h1>
+        <div class="mb-5 rounded-4 bg-dark text-light border-5 border-start border-end border-info">
+            <div class="text-center py-4">
+                <h1 class="display-5 fw-bold">
+                    Welcome to our cocktails bar! 🍸
+                </h1>
+            </div>
+        </div>
 
-        <div class="row">
+        <div class="row g-4">
             <div class="col-4">
-                <div class="card border-dark">
+                <div class="card border-5 border-dark">
                     <div class="card-header">
                         title
                     </div>
@@ -25,7 +29,7 @@ export default {
                 </div>
             </div>
             <div class="col-4">
-                <div class="card border-dark">
+                <div class="card border-5 border-dark">
                     <div class="card-header">
                         title
                     </div>
@@ -38,7 +42,7 @@ export default {
                 </div>
             </div>
             <div class="col-4">
-                <div class="card border-dark">
+                <div class="card border-5 border-dark">
                     <div class="card-header">
                         title
                     </div>
