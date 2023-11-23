@@ -1,6 +1,39 @@
 <script>
+
+import axios from 'axios';
+
 export default {
-    name: 'HomeView'
+    name: 'HomeView',
+    data() {
+        return {
+            drinks_api: 'http://127.0.0.1:8000/api/drinks/',
+            drinks: [],
+
+            currentPage: 1,
+            links: [],
+            pageURI: '?page=',
+        }
+    },
+
+    methods: {
+        getPage(url) {
+            axios.get(url).then(response => {
+                this.drinks = response.data.results.data
+                this.links = response.data.results.links
+                console.log(url);
+            })
+                .catch(error => {
+                    console.error(error)
+                })
+        },
+    },
+
+    mounted() {
+
+        this.getPage(this.drinks_api + this.pageURI);
+
+    }
+
 }
 </script>
 <template>
@@ -15,46 +48,70 @@ export default {
         </div>
 
         <div class="row g-4">
-            <div class="col-4">
-                <div class="card border-5 border-dark">
-                    <div class="card-header">
-                        title
+            <div class="col-4" v-for="drink in  this.drinks ">
+                <div class="card h-100 border-5 border-dark rounded-3 bg-info">
+                    <div class="card-header bg-info">
+                        <h4>
+                            {{ drink.name }}
+                        </h4>
                     </div>
-                    <div class="card-body">
-                        image
+                    <div class="card-body bg-dark text-light">
+                        <img :src="drink.thumb" alt="" class="img-fluid rounded">
+                        <section class="pt-3 d-flex justify-content-evenly fw-bold">
+                            <span v-if="drink.isAlcoholic">
+                                Alcoholic
+                            </span>
+                            <span v-else>
+                                Analcoholic
+                            </span>
+                            <span>
+                                {{ drink.glass }}
+                            </span>
+                        </section>
                     </div>
-                    <div class="card-footer">
-                        infos
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card border-5 border-dark">
-                    <div class="card-header">
-                        title
-                    </div>
-                    <div class="card-body">
-                        image
-                    </div>
-                    <div class="card-footer">
-                        infos
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card border-5 border-dark">
-                    <div class="card-header">
-                        title
-                    </div>
-                    <div class="card-body">
-                        image
-                    </div>
-                    <div class="card-footer">
-                        infos
+                    <div class="card-footer h-100 py-3 bg-info">
+                        <!-- infos -->
+                        <p class="fw-semibold border-start border-dark ps-1">
+                            {{ drink.instruction }}
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h4>
+                                            Ingredients
+                                        </h4>
+                                        <p>
+                                            {{ drink.ingredients }}
+                                        </p>
+                                    </div>
+                                    <div class="col-5">
+                                        <h4>
+                                            Measures
+                                        </h4>
+                                        <p>
+                                            {{ drink.measures }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <nav class="d-flex justify-content-center pt-5">
+            <ul class="pagination bg-dark p-2 rounded-2">
+
+                <li class="page-item" v-for="link in this.links">
+                    <a class="page-link text-dark" role="button" @click="getPage(link.url)" v-html="link.label"></a>
+                </li>
+
+            </ul>
+        </nav>
+
 
     </div>
 </template>
