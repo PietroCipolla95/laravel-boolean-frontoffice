@@ -11,40 +11,41 @@ export default {
     <h2 class="text-center mb-4">La Nostra Storia</h2>
     <div class="row">
       <div class="col-md-6 text-center">
-        <img src="https://picsum.photos/500/300" alt="Our Story Image" class="img-fluid rounded">
+        <img src="../assets/images/img-about-us.png" alt="Our Story Image" class="img-fluid rounded w-75">
       </div>
       <div class="col-md-6">
         <p class="lead">
-          Benvenuti nel mondo colorato e vibrante di nome??, la tua destinazione definitiva per cocktail
+          Benvenuti nel mondo colorato e vibrante di <strong>Creative Cocktails Inc.</strong>, la tua destinazione definitiva per cocktail
           innovativi e indimenticabili. Fondata nel 1990, la nostra missione è stata da sempre quella di rivoluzionare
-          l'arte della mixologia.
+          l'arte della mixologia.Alla Creative Cocktails Inc., crediamo che ogni cocktail sia un'opera d'arte, un equilibrio perfetto tra sapore, aroma e presentazione. La nostra squadra di mixologi esperti, con la loro passione e conoscenza approfondita, crea esperienze uniche che risvegliano i sensi. Utilizzando ingredienti di alta qualità, ricette innovative e tecniche di mixaggio all'avanguardia, siamo in grado di offrire un'ampia gamma di bevande, da quelle classiche rivisitate a creazioni completamente originali.
         </p>
       </div>
     </div>
   </div>
 
-  <div class="container my-5">
+  <div class="container mt-5">
   <div class="row">
     <!-- indirizzo -->
     <div class="col-md-6 text-center">
-      <h2 class="text-danger">Dove ci troviamo?</h2>
-      <p>Qui puoi inserire una descrizione della tua azienda o organizzazione.</p>
-      <p><strong>Indirizzo:</strong> Via Roma 1, 12345 Roma, Italia</p>
+      <h2 class="text-danger mb-4">Dove ci troviamo?</h2>
+      <p>Potete trovarci nella nostra sede principale: </p>
+      <p> Via Roma 1, 12345 Roma, Italia - Orario 08.00/13.00 e 16.00/20.00</p>
+      <p>oppure presso i nostri rivenditori autorizzati <strong>ABCocktails</strong></p>
+
       <p><strong>Telefono:</strong> +39 0123 456789</p>
-      <p><strong>Email:</strong> info@esempio.com</p>
+      <p><strong>Email:</strong> infococktail@gmail.com</p>
     </div>
     <!-- mappa-->
     <div class="col-md-6">
-     
-    <img src="../assets/images/map.png" class="img-fluid">
+    <img src="../assets/images/map.png" class="img-fluid h-75 rounded">
     </div>
   </div>
   </div>
 
 
    <!-- Carosello -->
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">Featured Brands</h2>
+  <div class="container mt-2">
+    <h2 class="text-center mb-4">Brand partners</h2>
     <div id="brandsCarousel" class="carousel slide" data-ride="carousel">
 
       <!-- Carousel indicators -->
