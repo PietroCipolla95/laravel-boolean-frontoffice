@@ -3,45 +3,40 @@
 import axios from 'axios';
 
 export default {
-    name: 'HomeView',
+    name: 'SingleCategory',
+
     data() {
         return {
-            drinks_api: 'http://127.0.0.1:8000/api/drinks/',
-            drinks: [],
-
             categories_api: 'http://127.0.0.1:8000/api/categories/',
             categories: [],
 
-            currentPage: 1,
-            links: [],
-            pageURI: '?page=',
+            drinks: [],
         }
-    },
-
-    methods: {
-        getPage(url) {
-            axios.get(url).then(response => {
-                this.drinks = response.data.results.data
-                this.links = response.data.results.links
-                console.log(url);
-            })
-        },
     },
 
     mounted() {
 
-        this.getPage(this.drinks_api + this.pageURI);
+
+        axios
+            .get(this.categories_api + this.$route.params.id)
+            .then(response => {
+                this.drinks = response.data.result.data[0].cocktails;
+            })
+
+            .catch(err => {
+                console.log(err.message);
+            })
 
         axios.get(this.categories_api).then(response => {
             this.categories = response.data.results
             console.log(this.categories);
         })
-    }
 
+    }
 }
 </script>
 <template>
-    <div id="home" class="container">
+    <div class="container">
 
         <div class="mb-5 rounded-4 bg-dark text-light border-5 border-start border-end border-info">
             <div class="text-center py-4">
@@ -104,44 +99,8 @@ export default {
                 </div>
             </div>
         </div>
-
-
-        <nav class="d-flex justify-content-center pt-5">
-            <ul class="pagination bg-dark p-2 rounded-2">
-
-                <li class="page-item" v-for="link in this.links">
-                    <a class="page-link text-dark" role="button" @click="getPage(link.url)" v-html="link.label"></a>
-                </li>
-
-            </ul>
-        </nav>
-
-
-    </div>
-
-    <div class="category-selector mb-3 position-fixed bg-dark rounded-3 text-light p-3">
-        <div class="card border-dark mb-3">
-            <div class="card-header">
-                Categories
-            </div>
-            <div class="card-body">
-                <ul class="list-unstyled">
-                    <li v-for="category in categories">
-                        <router-link :to="{ name: 'single-category', params: { id: category.id } }"
-                            class="link-dark link-underline-info">
-                            {{ category.name }}
-                        </router-link>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 </template>
 
 
-<style lang="scss" scoped>
-.category-selector {
-    top: 31%;
-    right: 3%;
-}
-</style>
+<style lang="scss" scoped></style>

@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import ContactsView from './views/ContactsView.vue';
 import HomeView from './views/HomeView.vue';
 import AboutView from './views/AboutView.vue';
+import SingleCategory from './views/SingleCategory.vue';
 
 
 
@@ -27,6 +28,12 @@ const router = createRouter({
             path: '/about',
             name: 'about',
             component: AboutView
+        },
+
+        {
+            path: '/categories/:id',
+            name: 'single-category',
+            component: SingleCategory
         },
     ],
 });
