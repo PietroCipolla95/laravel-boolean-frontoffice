@@ -1,3 +1,4 @@
+
 <script>
 
 import AppHeader from './components/AppHeader.vue';
@@ -37,3 +38,4 @@ main {
     background-size: cover;
 }
 </style>
+
