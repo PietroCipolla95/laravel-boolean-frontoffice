@@ -1,5 +1,4 @@
 
-  
 <script>
 export default {
   name: 'About'
@@ -7,7 +6,7 @@ export default {
 </script>
   
 <template>
-  <div class="about-us-section container py-5 mt-5">
+  <div class="about-us-section container py-5 mt-5 rounded-3">
     <h2 class="text-center mb-4">La Nostra Storia</h2>
     <div class="row">
       <div class="col-md-6 text-center">
@@ -15,38 +14,43 @@ export default {
       </div>
       <div class="col-md-6">
         <p class="lead">
-          Benvenuti nel mondo colorato e vibrante di <strong>Creative Cocktails Inc.</strong>, la tua destinazione definitiva per cocktail
+          Benvenuti nel mondo colorato e vibrante di <strong>Creative Cocktails Inc.</strong>, la tua destinazione
+          definitiva per cocktail
           innovativi e indimenticabili. Fondata nel 1990, la nostra missione è stata da sempre quella di rivoluzionare
-          l'arte della mixologia.Alla Creative Cocktails Inc., crediamo che ogni cocktail sia un'opera d'arte, un equilibrio perfetto tra sapore, aroma e presentazione. La nostra squadra di mixologi esperti, con la loro passione e conoscenza approfondita, crea esperienze uniche che risvegliano i sensi. Utilizzando ingredienti di alta qualità, ricette innovative e tecniche di mixaggio all'avanguardia, siamo in grado di offrire un'ampia gamma di bevande, da quelle classiche rivisitate a creazioni completamente originali.
+          l'arte della mixologia.Alla Creative Cocktails Inc., crediamo che ogni cocktail sia un'opera d'arte, un
+          equilibrio perfetto tra sapore, aroma e presentazione. La nostra squadra di mixologi esperti, con la loro
+          passione e conoscenza approfondita, crea esperienze uniche che risvegliano i sensi. Utilizzando ingredienti di
+          alta qualità, ricette innovative e tecniche di mixaggio all'avanguardia, siamo in grado di offrire un'ampia
+          gamma di bevande, da quelle classiche rivisitate a creazioni completamente originali.
         </p>
       </div>
     </div>
   </div>
 
   <div class="container mt-5">
-  <div class="row">
-    <!-- indirizzo -->
-    <div class="col-md-6 text-center">
-      <h2 class="text-danger mb-4">Dove ci troviamo?</h2>
-      <p>Potete trovarci nella nostra sede principale: </p>
-      <p> Via Roma 1, 12345 Roma, Italia - Orario 08.00/13.00 e 16.00/20.00</p>
-      <p>oppure presso i nostri rivenditori autorizzati <strong>ABCocktails</strong></p>
+    <div class="row align-items-center">
+      <!-- indirizzo -->
+      <div class="col-md-6 text-center bg-dark rounded-3 text-light py-5">
+        <h2 class="text-danger mb-4">Dove ci troviamo?</h2>
+        <p>Potete trovarci nella nostra sede principale: </p>
+        <p> Via Roma 1, 12345 Roma, Italia - Orario 08.00/13.00 e 16.00/20.00</p>
+        <p>oppure presso i nostri rivenditori autorizzati <strong>ABCocktails</strong></p>
 
-      <p><strong>Telefono:</strong> +39 0123 456789</p>
-      <p><strong>Email:</strong> infococktail@gmail.com</p>
-    </div>
-    <!-- mappa-->
-    <div class="col-md-6">
-    <img src="../assets/images/map.png" class="img-fluid h-75 rounded">
+        <p><strong>Telefono:</strong> +39 0123 456789</p>
+        <p><strong>Email:</strong> infococktail@gmail.com</p>
+      </div>
+      <!-- mappa-->
+      <div class="col-md-6">
+        <img src="../assets/images/map.png" class="img-fluid h-75 rounded">
+      </div>
     </div>
   </div>
-  </div>
 
 
-   <!-- Carosello -->
-  <div class="container mt-2">
-    <h2 class="text-center mb-4">Brand partners</h2>
-    <div id="brandsCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Carosello -->
+  <div class="container mt-5 text-center">
+    <span class="mb-4 fs-2 p-2 bg-dark text-light rounded-3">Brand partners</span>
+    <div id="brandsCarousel" class="carousel slide mt-4" data-ride="carousel">
 
       <!-- Carousel indicators -->
       <ol class="carousel-indicators">
@@ -100,8 +104,6 @@ export default {
       </a>
     </div>
   </div>
-
-
 </template>
   
  
@@ -131,6 +133,7 @@ export default {
 
 li::marker {
   content: "";
- 
-}</style>
+
+}
+</style>
   
